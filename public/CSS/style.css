@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.flash {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translateX(100%);
+    opacity: 0;
+}
+.flash.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+.flash.hide {
+    transform: translateX(100%);
+    opacity: 0;
+}

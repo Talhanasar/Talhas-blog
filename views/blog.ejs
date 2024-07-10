@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="main w-full h-full select-none">
+        <%- include("./components/header.ejs") %>
+        <div class="body flex justify-center items-center h-[calc(100%-101px)]">
+            <div class="flex flex-col flex-auto h-full p-6">
+                <div class="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-gray-100 h-full p-4">
+                    <div class="flex flex-col h-full overflow-x-auto mb-4">
+                        <div class="flex flex-col h-full">
+                            <div class="grid grid-cols-12 gap-y-2">
+                                <% posts.forEach((post) => { %>
+                                    <% if(post.user._id.toString() === currentUser._id.toString()) { %>
+                                        <div class="col-start-6 col-end-13 p-3 rounded-lg">
+                                            <div class="flex items-center justify-start flex-row-reverse">
+                                                <div class="h-10 w-10 rounded-full overflow-hidden">
+                                                    <% if (post.user.image.data != '') { %>
+                                                        <img class="object-cover h-full w-full" src="data:<%= post.user.image.contentType %>;base64,<%= post.user.image.data.toString('base64') %>" alt="Profile Picture">
+                                                    <% } else { %>
+                                                        <img class="object-cover h-full w-full" src="https://shorturl.at/3TG2R" alt="Default Profile Picture">
+                                                    <% } %>
+                                                </div>
+                                                <div class="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl">
+                                                    <div><%= post.postData %></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <% } else { %>
+                                        <div class="col-start-1 col-end-8 p-3 rounded-lg">
+                                            <div class="flex flex-row items-center">
+                                                <div class="h-10 w-10 rounded-full overflow-hidden">
+                                                    <% if (post.user.image.data != '') { %>
+                                                        <img class="object-cover h-full w-full" src="data:<%= post.user.image.contentType %>;base64,<%= post.user.image.data.toString('base64') %>" alt="Profile Picture">
+                                                    <% } else { %>
+                                                        <img class="object-cover h-full w-full" src="https://shorturl.at/3TG2R" alt="Default Profile Picture">
+                                                    <% } %>
+                                                </div>
+                                                <div class="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl">
+                                                    <p class="text-zinc-400"><%= post.user.username %></p>
+                                                    <div><%= post.postData %></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <% } %>
+                                <% }) %>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="/blog" method="post" class="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4">
+                        <div class="flex-grow">
+                            <div class="relative w-full">
+                                <input type="text" class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10" name="data">
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <button class="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0" type="submit">
+                                <span>Post</span>
+                                <span class="ml-2">
+                                    <svg class="w-4 h-4 transform rotate-45 -mt-px" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/Js/script.js"></script>
+</body>
+
+</html>

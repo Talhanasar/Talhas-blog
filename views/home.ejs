@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main w-full h-full select-none relative">
+        <div id="error-message" class="flash bg-red-300 border-[1px] border-red-700 absolute top-8 right-[2rem] py-2 px-4 w-[25rem] rounded-md">
+            <i class="fa-solid fa-triangle-exclamation text-red-800 mr-3"></i>
+            <%= message.error %>
+        </div>
+        <div id="success-message" class="flash bg-green-300 border-[1px] border-green-700 absolute top-8 right-[2rem] py-2 px-4 w-[25rem] rounded-md">
+            <i class="fa-solid fa-check text-green-700 mr-3"></i>
+            <%= message.success %>
+        </div>
+        <%- include("./components/header.ejs") %> 
+        <div class="body flex justify-center items-center h-1/2">
+
+            <h1 class="text-2xl">Hey welcome to Talha's blog</h1>
+        </div>  
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/Js/script.js"></script>
+</body>
+</html>
