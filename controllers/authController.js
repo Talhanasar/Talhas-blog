@@ -48,7 +48,7 @@ module.exports.registerUser = async (req, res) => {
                 });
                 let token = generateToken(user);
                 res.cookie("token", token);
-                req.flash("success","Successfully account created");
+                req.flash("success","Welcome to talhas duniya!");
                 res.redirect("/")
             })
         });
