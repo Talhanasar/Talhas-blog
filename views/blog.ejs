@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/CSS/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
                                                     <% if (post.user.image.data != '') { %>
                                                         <img class="object-cover h-full w-full" src="data:<%= post.user.image.contentType %>;base64,<%= post.user.image.data.toString('base64') %>" alt="Profile Picture">
                                                     <% } else { %>
-                                                        <img class="object-cover h-full w-full" src="https://shorturl.at/3TG2R" alt="Default Profile Picture">
+                                                        <img class="object-cover h-full w-full" src="/image/profile.jpeg" alt="Default Profile Picture">
                                                     <% } %>
                                                 </div>
                                                 <div class="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl">
@@ -41,7 +41,7 @@
                                                     <% if (post.user.image.data != '') { %>
                                                         <img class="object-cover h-full w-full" src="data:<%= post.user.image.contentType %>;base64,<%= post.user.image.data.toString('base64') %>" alt="Profile Picture">
                                                     <% } else { %>
-                                                        <img class="object-cover h-full w-full" src="https://shorturl.at/3TG2R" alt="Default Profile Picture">
+                                                        <img class="object-cover h-full w-full" src="/image/profile.jpeg" alt="Default Profile Picture">
                                                     <% } %>
                                                 </div>
                                                 <div class="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl">

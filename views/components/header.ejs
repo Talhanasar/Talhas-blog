@@ -26,7 +26,7 @@
                 <% if (currentUser.image.data.toString() != '') { %>
                     <img class="object-cover h-full w-full" src="data:<%= currentUser.image.contentType %>;base64,<%= currentUser.image.data.toString('base64') %>" alt="Profile Picture">
                 <% } else { %>
-                    <img class="object-cover h-full w-full" src="https://shorturl.at/3TG2R" alt="Default Profile Picture">
+                    <img class="object-cover h-full w-full" src="/image/profile.jpeg" alt="Default Profile Picture">
                 <% } %>
             </a>
         <% } %>
