@@ -6,8 +6,7 @@ const postModel = require('../models/postModel');
  
 router.get('/',isLoggedIn, async(req,res) => {
     let posts = await postModel.find().populate('user');
-    let userId = req.user._id;
-    res.render('blog',{posts,userId});
+    res.render('blog',{posts});
  });
 router.post('/',isLoggedIn, async(req,res) => {
     let {data} = req.body;

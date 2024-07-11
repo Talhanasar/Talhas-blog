@@ -22,7 +22,7 @@
                                     <% if(post.user._id.toString() === currentUser._id.toString()) { %>
                                         <div class="col-start-6 col-end-13 p-3 rounded-lg">
                                             <div class="flex items-center justify-start flex-row-reverse">
-                                               <a href="/profile/<%= user._id %>"><div class="h-10 w-10 rounded-full overflow-hidden">
+                                               <a href="/profile/<%= post.user._id %>"><div class="h-10 w-10 rounded-full overflow-hidden">
                                                     <% if (post.user.image.data != '') { %>
                                                         <img class="object-cover h-full w-full" src="data:<%= post.user.image.contentType %>;base64,<%= post.user.image.data.toString('base64') %>" alt="Profile Picture">
                                                     <% } else { %>
