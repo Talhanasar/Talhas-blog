@@ -33,6 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function goBack() {
-    window.history.back();
-}
+document.getElementById('backButton').addEventListener('click', function() {
+    var referrer = document.referrer;
+    
+    // Check if the referrer matches a specific path
+    if (!referrer.includes('/edit')) {
+        window.history.back();
+    } else {
+        // Redirect to a different path if the referrer does not match
+        window.location.href = '/';
+    }
+});
