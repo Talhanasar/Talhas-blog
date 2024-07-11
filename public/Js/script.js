@@ -32,3 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000); // Delay to remove the element after the slide-out
     }
 });
+
+function goBack() {
+    window.history.back();
+}

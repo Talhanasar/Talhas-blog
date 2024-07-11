@@ -13,6 +13,7 @@ const blogRouter = require('./routes/blogRouter');
 const userModel = require('./models/userModel');
 const postModel = require('./models/postModel');
 const db = require('./config/mongodb-connection');
+const isLoggedIn = require('./middlewares/isLoggedIn');
 const getProfile = require('./middlewares/getProfile');
  
 app.use(cookieParser());

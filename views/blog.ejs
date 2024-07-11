@@ -22,13 +22,13 @@
                                     <% if(post.user._id.toString() === currentUser._id.toString()) { %>
                                         <div class="col-start-6 col-end-13 p-3 rounded-lg">
                                             <div class="flex items-center justify-start flex-row-reverse">
-                                                <div class="h-10 w-10 rounded-full overflow-hidden">
+                                               <a href="/profile/<%= user._id %>"><div class="h-10 w-10 rounded-full overflow-hidden">
                                                     <% if (post.user.image.data != '') { %>
                                                         <img class="object-cover h-full w-full" src="data:<%= post.user.image.contentType %>;base64,<%= post.user.image.data.toString('base64') %>" alt="Profile Picture">
                                                     <% } else { %>
                                                         <img class="object-cover h-full w-full" src="/image/profile.jpeg" alt="Default Profile Picture">
                                                     <% } %>
-                                                </div>
+                                                </div></a> 
                                                 <div class="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl">
                                                     <div><%= post.postData %></div>
                                                 </div>
@@ -37,13 +37,13 @@
                                     <% } else { %>
                                         <div class="col-start-1 col-end-8 p-3 rounded-lg">
                                             <div class="flex flex-row items-center">
-                                                <div class="h-10 w-10 rounded-full overflow-hidden">
+                                                <a href="/profile/<%= post.user._id %>"><div class="h-10 w-10 rounded-full overflow-hidden">
                                                     <% if (post.user.image.data != '') { %>
                                                         <img class="object-cover h-full w-full" src="data:<%= post.user.image.contentType %>;base64,<%= post.user.image.data.toString('base64') %>" alt="Profile Picture">
                                                     <% } else { %>
                                                         <img class="object-cover h-full w-full" src="/image/profile.jpeg" alt="Default Profile Picture">
                                                     <% } %>
-                                                </div>
+                                                </div></a>
                                                 <div class="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl">
                                                     <p class="text-zinc-400"><%= post.user.username %></p>
                                                     <div><%= post.postData %></div>

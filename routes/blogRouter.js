@@ -1,11 +1,10 @@
 const express = require('express');
 const isLoggedIn = require('../middlewares/isLoggedIn');
-const getProfile = require('../middlewares/getProfile');
 const router = express.Router();
 const postModel = require('../models/postModel');
 
  
-router.get('/',isLoggedIn,getProfile, async(req,res) => {
+router.get('/',isLoggedIn, async(req,res) => {
     let posts = await postModel.find().populate('user');
     let userId = req.user._id;
     res.render('blog',{posts,userId});
