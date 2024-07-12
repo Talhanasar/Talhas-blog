@@ -33,14 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.getElementById('backButton').addEventListener('click', function() {
-    var referrer = document.referrer;
-    
-    // Check if the referrer matches a specific path
-    if (!referrer.includes('/edit')) {
-        window.history.back();
-    } else {
-        // Redirect to a different path if the referrer does not match
-        window.location.href = '/';
-    }
-});
+if(document.getElementById('backButton')){
+    document.getElementById('backButton').addEventListener('click', function() {
+        var referrer = document.referrer;
+        
+        // Check if the referrer matches a specific path
+        if (!referrer.includes('/edit')) {
+            window.history.back();
+        } else {
+            // Redirect to a different path if the referrer does not match
+            window.location.href = '/';
+        }
+    });
+}

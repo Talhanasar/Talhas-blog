@@ -1,8 +1,5 @@
 const mongoose = require('mongoose');
 
-// Enable Mongoose debug mode
-mongoose.set('debug', true);
-
 mongoose.connect(process.env.MONGODB_URI)
   .then()
   .catch((error) => {
