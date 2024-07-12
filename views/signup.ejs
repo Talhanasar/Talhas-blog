@@ -10,13 +10,13 @@
 </head>
 <body>
     
-    <div class="main overflow-hidden relative w-full h-full">
+    <div class="main overflow-hidden relative w-full h-full flex justify-center items-center">
 
-        <div id="error-message" class="flash bg-red-300 border-[1px] border-red-700 absolute top-8 right-[2rem] py-2 px-4 w-[25rem] rounded-md">
+        <div id="error-message" class="flash bg-red-300 border-[1px] border-red-700 absolute top-8 right-2 md:right-[2rem] py-2 md:px-4 px-2 md:w-[25rem] w-3/4 rounded-md z-30">
             <i class="fa-solid fa-triangle-exclamation text-red-800 mr-3"></i>
             <%= message.error %>
         </div>
-        <div id="success-message" class="flash bg-green-300 border-[1px] border-green-700 absolute top-8 right-[2rem] py-2 px-4 w-[25rem] rounded-md">
+        <div id="success-message" class="flash bg-green-300 border-[1px] border-green-700 absolute top-8 right-2 md:right-[2rem] py-2 md:px-4 px-2 md:w-[25rem] w-3/4 rounded-md z-30">
             <i class="fa-solid fa-check text-green-700 mr-3"></i>
             <%= message.success %>
         </div>
