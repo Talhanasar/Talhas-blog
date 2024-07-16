@@ -15,7 +15,6 @@ const getProfile = require('./middlewares/getProfile');
 
 const app = express();
 
-app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -23,11 +22,8 @@ app.use(expressSession({
     resave: false,
     saveUninitialized: false,
     secret: process.env.EXPRESS_SESSION_SECRET,
-    cookie: {
-        secure: true, // Set to true if you're using HTTPS
-        maxAge: 24 * 60 * 60 * 1000 // 1 day default
-    }
 }));
+app.use(cookieParser());
 app.use(flash());
 app.set('view engine', 'ejs');
 

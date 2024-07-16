@@ -5,8 +5,8 @@ const { generateToken } = require('../utils/generateToken');
 module.exports.loginUser = async (req, res) => {
     try {
         let { email, password, remember } = req.body;
-        let user = await userModel.findOne({ email });
 
+        let user = await userModel.findOne({ email });
         if (user) {
             bcrypt.compare(password, user.password, function(err, result) {
                 if (!result) {
@@ -18,11 +18,12 @@ module.exports.loginUser = async (req, res) => {
 
                 if (remember) {
                     req.session.cookie.maxAge = 15 * 24 * 60 * 60 * 1000; // 15 days
+                    res.cookie('token', token,{ maxAge: 15 * 24 * 60 * 60 * 1000 });// Log cookies set in response
                 } else {
                     req.session.cookie.expires = false;
+                    res.cookie('token',token);
                 }
 
-                res.cookie('token', token);
                 res.redirect('/');
             });
         } else {
