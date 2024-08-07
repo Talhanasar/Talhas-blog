@@ -19,13 +19,13 @@
             <%= message.success %>
         </div>
         <%- include("./components/header.ejs") %> 
-        <div class="body flex justify-center items-center h-[calc(100%-90px)] gap-5 ">
+        <div class="body flex md:justify-center flex-col-reverse md:flex-row md:items-center md:h-[calc(100%-90px)] md:gap-5 gap-2 ">
             <div class="left py-10 px-5">
-                <h1 class="text-3xl">Welcome to talha's entertaining blog!</h1>
+                <h1 class="md:text-3xl text-2xl text-center">Welcome to talha's entertaining blog!</h1>
                 <p></p>
             </div>
-            <div class="right py-10 px-5 h-3/4">
-                <img class="h-full w-full object-cover" src="/image/home.png" alt="">
+            <div class="right md:py-10 md:px-5 w-full md:h-3/4 md:w-auto">
+                <img class="h-full w-full object-right" src="/image/home.jpeg" alt="">
             </div>
         </div>  
     </div>

@@ -33,7 +33,7 @@
 		</ul>
         <% if(!currentUser){ %>
             <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" href="/user/signin">Sign In</a>
-            <a class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200" href="/user/sginup">Sign up</a>
+            <a class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200" href="/user/signup">Sign up</a>
     <% } else {%>
         <a href="/profile/<%= currentUser._id %>" class="profile w-10 h-10 rounded-full overflow-hidden shadow-zinc-300 shadow-sm border-blue-500 border hidden lg:inline-block ">
             <% if (currentUser.image.data.toString() != '') { %>
@@ -48,18 +48,16 @@
 		<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
 		<nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
 			<div class="flex items-center mb-8">
-				<a class="mr-auto text-3xl font-bold leading-none w-10 h-10 rounded-full overflow-hidden" href="/profile/<%= currentUser._id%>">
-					<% if(currentUser){ %>
+				<% if(currentUser){ %>
+					<a class="mr-auto text-3xl font-bold leading-none w-10 h-10 rounded-full overflow-hidden" href="/profile/<%= currentUser._id%>">
 						<% if (currentUser.image.data.toString() != '') { %>
 							<img class="object-cover h-full w-full" src="data:<%= currentUser.image.contentType %>;base64,<%= currentUser.image.data.toString('base64') %>" alt="Profile Picture">
 						<% } else { %>
 							<img class="object-cover h-full w-full" src="/image/profile.jpeg" alt="Default Profile Picture">
 						<% } %>
-					<%} else{ %>
-						<img class="object-cover h-full w-full" src="/image/Logo.jpeg" alt="Default Profile Picture">
+					</a>
 					<%} %>
 					
-				</a>
 				<button class="navbar-close">
 					<svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
